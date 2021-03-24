@@ -5,8 +5,8 @@ n = 200
 
 X = np.random.rand(n)[np.newaxis]
 
-# Cool trick I learned from Percy Liang during one of his lectures for CS221.
-# It generates fake Y values and if the program works then w and b will converge
+# Cool trick Percy Liang used during one of his lectures for CS221. It 
+# generates fake Y values and if the program works then w and b will converge
 # to whatever you set these values too.
 artificial_weights = np.array([[1]])
 artificial_bias = np.array([[3]])
