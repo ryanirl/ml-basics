@@ -9,3 +9,12 @@ TODO
 
 Logistic Regression TODO
  - Add Cost Function
+
+Known Problems
+ - Jupyter Notebook equations aren't working
+
+Plan on Adding
+ - Regression "stuff"
+ - Support Vector Machines (SVM's) & Kernal Methods
+ - Naive Bayes
+ - ...
