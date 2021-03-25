@@ -19,17 +19,17 @@ def hypothesis(w, x, b):
     return np.dot(w.T, x) + b
 
 def train(w, b, x, y):
-#    print("x: {}".format(np.shape(x)))
-#    print("y: {}".format(np.shape(y)))
-#    print("w: {}".format(np.shape(w)))
-#    print("b: {}".format(np.shape(b)))
+    print("x: {}".format(np.shape(x)))
+    print("y: {}".format(np.shape(y)))
+    print("w: {}".format(np.shape(w)))
+    print("b: {}".format(np.shape(b)))
 
     for i in range(10000):
         h = hypothesis(w, x, b)
 
         w = w - ( 0.01 * (2.0 * np.dot(h - y, x.T) / 200.0))
         b = b - ( 0.01 * (2.0 * np.sum(h - y)) / 200.0 )
-        print("w: {}, b: {}".format(w, b))
+#        print("w: {}, b: {}".format(w, b))
         
     return w, b
 
