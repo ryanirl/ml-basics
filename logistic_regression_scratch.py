@@ -64,6 +64,11 @@ weight_1 = coef[1]
 weight_2 = coef[2]
 
 X = X.T
+
+print("X: {}".format(np.shape(X)))
+print("Y: {}".format(np.shape(Y)))
+
+
 for i in range(n):
     if (Y[i] == 1):
         plt.scatter(X[:, i][0], X[:, i][1], color="green") 
