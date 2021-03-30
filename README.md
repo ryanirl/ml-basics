@@ -1,5 +1,7 @@
 # ML-BASICS
 
+VERY MUCH STILL A WORK IN PROGRESS, MOST THINGS ARE NOT FINAL
+
 Sorry, this repo is a mess, but I do plan on cleaning it up once I get my bearings in ML :) 
 
 I am teaching myself various machine learning techniques and plan on building everything I can from scratch.
