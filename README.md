@@ -1,22 +1,63 @@
 # ML-BASICS
 
-VERY MUCH STILL A WORK IN PROGRESS, MOST THINGS ARE NOT FINAL
+*Currently Working On:* SVM & mnist Classification with SVM
 
-Sorry, this repo is a mess, but I do plan on cleaning it up once I get my bearings in ML :) 
+Near Done:
+ - SVM
+ - Perceptron
 
-I am teaching myself various machine learning techniques and plan on building everything I can from scratch.
-I also plan on including all of the math associated with each.
+Not even close to Done:
+ - everything else :(
 
-Logistic Regression TODO
- - Add Cost Function
+Sorry, this repo is a mess, but I do plan on cleaning it up once I get my bearings :)
 
-Known Problems
- - Jupyter Notebook equations aren't working in perceptron algorithm
 
 Plan on Adding
  - Regression "stuff"
- - Support Vector Machines (SVM's) & Kernal Methods
  - Naive Bayes
- - SVM "FROM SCRATCH"
- - CVXOPT Optimization of SVM with Gaussian Kernal
  - SVM for MNIST classification (kinda from scratch)
+ 
+Add to each:
+ - Interactive Stuff
+ - Cost Functions & Accuracy
+ 
+ 
+<br />
+ 
+---
+
+## Road Map:
+
+### Supervised Learning
+1. Classification
+    - Logistic Regression
+    - SVM
+    - Naive Bayes
+    - KNN
+    - Decision Trees
+   
+2. Regression
+    Good List: https://www.listendata.com/2018/03/regression-analysis.html
+    - Linear Regression
+    - Polynomial Regression
+    - Ridge / Lasso Regression
+    - PLR
+    - PLS
+    
+### Unsupervised Learning
+1. Clustering
+    - K-Means
+    - ...
+    
+### Reinforcement Learning
+1. ???
+    
+### Neural Networks and Deep Learning
+1. Recurrent Neural Nets (RNN)
+2. Convultional Neural Nets (CNN)
+3. Generative Adversarial Nets (GAN)
+4. ...
+
+### Ensemble Learning 
+1. Boosting
+    

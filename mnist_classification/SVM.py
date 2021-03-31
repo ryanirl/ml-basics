@@ -12,9 +12,6 @@ from sklearn.svm import SVC
 def gaussian(x1, x2, sigma = 0.1, axis = 0):
     return np.exp(-(np.linalg.norm(x1 - x2, axis=axis) ** 2) / (2.0 * (sigma ** 2.0)))
 
-def polynomial(x1, x2, p = 1, sigma = 0.1, axis = 0):
-    return (1.0 + (np.dot(x2, x1))) ** p
-
 # Much of the design is based off of Aladdin Persson's implimentation, his video on SVM with CVXOPT was
 # instrumental in my understanding of the CVXOPT library, so huge shoutout to him. The link to his video is:
 # https://www.youtube.com/watch?v=gBTtR0bs-1k&list=PLhhyoLH6IjfxpLWyOgBt1sBzIapdRKZmj&index=7
@@ -83,42 +80,7 @@ class SVM:
 
 
 
-# --- Circle Test --- # 
-#X, y = make_circles(random_state = 1)
-# ------------------- # 
 
-
-
-if __name__ == "__main__":
-    # --- Overfit Test --- # 
-    np.random.seed(0)
-
-    X = np.random.randn(200, 2)
-    y = np.logical_xor(X[:, 0] > 0, X[:, 1] > 0)
-    y = np.where(y, 1, -1)
-    # -------------------- #
-
-
-
-    y[y == 0] = -1
-    y_int_32 = y
-    y = y.reshape(-1,1) * 1.
-
-    # Multiple Plots 
-    fig, (ax0, ax1) = plt.subplots(1, 2)
-
-    # My Implimentation
-    model = SVM()
-    model.fit(X, y)
-    plot_decision_regions(X, y_int_32, clf=model, legend=2, ax=ax0)
-
-    # sklearn Implimentation
-    sklearn_model = SVC(kernel='rbf')
-    sklearn_model.fit(X, y_int_32)
-    plot_decision_regions(X, y_int_32, clf=sklearn_model, legend=2, ax=ax1)
-
-    # SHOW PLOT
-    plt.show()
 
 
 
