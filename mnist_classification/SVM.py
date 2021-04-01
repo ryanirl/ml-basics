@@ -4,12 +4,13 @@ import cvxopt
 from sklearn.datasets import make_circles
 from mlxtend.plotting import plot_decision_regions
 from sklearn.svm import SVC
-
+from scipy.spatial.distance import pdist, squareform
+import scipy
 
 # HUGE OVERFITTING PROBLEM
 # SOLUTION: RAISE SIGMA VALUE 
 
-def gaussian(x1, x2, sigma = 0.1, axis = 0):
+def gaussian(x1, x2, sigma = 0.1, axis = 1):
     return np.exp(-(np.linalg.norm(x1 - x2, axis=axis) ** 2) / (2.0 * (sigma ** 2.0)))
 
 # Much of the design is based off of Aladdin Persson's implimentation, his video on SVM with CVXOPT was
@@ -28,21 +29,23 @@ class SVM:
     '''
 
     def __init__(self, kernel = gaussian, sigma = 0.6, C = 1): 
-        self.kernal = kernel
+        self.kernel = kernel
         self.sigma = sigma
         self.C = C
 
 
-    def fit(self, x, y):
-        m, n = np.shape(x)
+    def fit(self, X, y):
+        m, n = np.shape(X)
         self.y = y
         self.X = X
         self.gram_matrix = np.zeros((m, m))
 
         # Kernel K<X, X>
         for i in range(m):
+            print(i)
             for j in range(m):
                 self.gram_matrix[i][j] = gaussian(X[i], X[j], self.sigma, axis=0) 
+
 
         # The following article was a big help in understanding the conversion from dual form
         # to CVXOPT required form and implimenting CVXOPT:

@@ -17,6 +17,9 @@ Plan on Adding
  - Naive Bayes
  - SVM for MNIST classification (kinda from scratch)
  
+Known problems to look into
+ - mnist classification with gaussian kernel takes hours to compute the gram matrix, looking into cuda gpu acceleration to speed it up.
+ 
 Add to each:
  - Interactive Stuff
  - Cost Functions & Accuracy
