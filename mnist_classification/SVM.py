@@ -13,6 +13,10 @@ import scipy
 def gaussian(x1, x2, sigma = 0.1, axis = 1):
     return np.exp(-(np.linalg.norm(x1 - x2, axis=axis) ** 2) / (2.0 * (sigma ** 2.0)))
 
+# Takes roughly 24 minutes to compute linear SVM with 60,000 images OUCH
+def linear(x1, x2):
+    return np.dot(x1, x2.T)
+
 # Much of the design is based off of Aladdin Persson's implimentation, his video on SVM with CVXOPT was
 # instrumental in my understanding of the CVXOPT library, so huge shoutout to him. The link to his video is:
 # https://www.youtube.com/watch?v=gBTtR0bs-1k&list=PLhhyoLH6IjfxpLWyOgBt1sBzIapdRKZmj&index=7
@@ -40,11 +44,18 @@ class SVM:
         self.X = X
         self.gram_matrix = np.zeros((m, m))
 
-        # Kernel K<X, X>
+
+        # AP - This is much quicker than my implimentation as it
+        # gets rid of an extra for loop. 
         for i in range(m):
             print(i)
-            for j in range(m):
-                self.gram_matrix[i][j] = gaussian(X[i], X[j], self.sigma, axis=0) 
+            self.gram_matrix[i, :] = linear(X[i, np.newaxis], self.X)
+
+#        # Kernel K<X, X>
+#        for i in range(m):
+#            print(i)
+#            for j in range(m):
+#                self.gram_matrix[i][j] = linear(X[i], X[j])
 
 
         # The following article was a big help in understanding the conversion from dual form
@@ -77,7 +88,7 @@ class SVM:
 
         # Kernel <X_i, self.X>
         for i in range(len(X)):
-            prediction[i] = np.sum(self.alphas[S] * self.y[S] * gaussian(X[i], self.X[S], self.sigma, axis=1)[:, np.newaxis]) #AP
+            prediction[i] = np.sum(self.alphas[S] * self.y[S] * linear(X[i], self.X[S], self.sigma, axis=1)[:, np.newaxis]) #AP
             
         return np.sign(prediction + self.bias) #AP
 
