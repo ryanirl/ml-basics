@@ -23,10 +23,13 @@ def OLS(X, y, d):
     return w, b
 
 
-def lasso():
+def L1_cost():
     pass
 
-def ridge():
+def lassoL1():
+    pass
+
+def ridgeL2():
     pass
 
 def polynomial():
