@@ -2,7 +2,7 @@
 
 <br />
 
-<img src="../img/preview.png" width="800" height="400">
+<img src="img/preview.png" width="800" height="400">
 
 <br />
 
