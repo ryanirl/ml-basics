@@ -1,18 +1,16 @@
 # ML-BASICS
 
+<br />
+
+<img src="../img/preview.png" width="800" height="400">
+
+<br />
+
+**WORK IN PROGRESS**
+
 *Currently Working On:* mnist Classification with SVM
 
 PROBLEMS: Hit a roadblock where I don't have the proper prerequisites in probability to understand bayesian "stuff" and so I have been spending some time taking MIT OCW's 18.600 to better prepare myself. This will slow down the progress in this repo.
-
-Sorry, this repo is a mess, but I do plan on cleaning it up once I get my bearings :)
- 
-Known problems to look into
- - mnist classification with gaussian kernel takes hours to compute the gram matrix, looking into cuda gpu acceleration to speed it up.
- 
-Add to each:
- - Interactive Stuff
- - Cost Functions & Accuracy
- 
  
 <br />
  
@@ -22,35 +20,57 @@ Add to each:
 
 ### Supervised Learning
 1. Classification
-    - Logistic Regression
-    - SVM
-        - mnist with "from scratch" SVM
+    - Logistic Regression & Multinomial Logistic Regression
+    - Support Vector Machines (SVM)
     - Naive Bayes
-    - KNN
-    - Decision Trees
-   
+    - K-Nearest-Neighbors (KNN)
+    - Decision Trees & Random Forest
+    
 2. Regression
-    Good List: https://www.listendata.com/2018/03/regression-analysis.html
     - Linear Regression
     - Polynomial Regression
-    - Ridge / Lasso Regression (L1/L2 Regularization)
-    - PLR
-    - PLS
+    - Lasso Regression (L1)
+    - Ridge Regression (L2)
+    - Partial Lease Squares (PLS)
+    - Principle Component (PCR)
+
+3. Neural Networks
+    - CNN
+    - RNN
+    - Transformer Networks
+    - Generative Adversarial Nets (GAN)
+
+4. Boosting
+    - XGBoost
+    - AdaBoost
+    - Gradient Tree Boosting
     
+
 ### Unsupervised Learning
 1. Clustering
     - K-Means
-    - ...
-    
-### Reinforcement Learning
-1. ???
-    
-### Neural Networks and Deep Learning
-1. Recurrent Neural Nets (RNN)
-2. Convultional Neural Nets (CNN)
-3. Generative Adversarial Nets (GAN)
-4. ...
+    - Mean Shift
+    - Expectation Maximization (EM) with Gaussian Mixture Models (GMM)
 
-### Ensemble Learning 
-1. Boosting
+2. Dimensionality Reduction
+    - Principle Component Analysis (PCA)
     
+    
+### Analysis of Model
+1. Classification
+    - Accuracy
+    - Precision
+    - Recall
+    - f1
+    - Confusion Matrix
+    - Mean Average Precision
+
+2. Regression
+    - Mean Squared Error (MSE)
+    - Mean Absolute Error (MAE)
+    - R squared
+
+3. Bias and Variance of Models
+
+
+

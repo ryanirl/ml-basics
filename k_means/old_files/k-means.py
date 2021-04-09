@@ -48,8 +48,9 @@ class KMeans:
                 else:
                     plt.scatter(X[:, i][0], X[:, i][1], color="blue")
 
-        plt.scatter(self.centers[0][0], self.centers[0][1], color="red", s=200)
-        plt.scatter(self.centers[1][0], self.centers[1][1], color="red", s=200)
+        plt.suptitle("K-Means")
+        plt.scatter(self.centers[0][0], self.centers[0][1], color="black", s=200)
+        plt.scatter(self.centers[1][0], self.centers[1][1], color="black", s=200)
         plt.show()
 
 

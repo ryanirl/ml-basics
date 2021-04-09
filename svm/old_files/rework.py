@@ -106,6 +106,9 @@ if __name__ == "__main__":
 
     # Multiple Plots 
     fig, (ax0, ax1) = plt.subplots(1, 2)
+    fig.suptitle("SVM w/ Gaussian Kerel")
+    ax0.set_title("FROM SCRATCH")
+    ax1.set_title("SKLEARN")
 
     # My Implimentation
     model = SVM()

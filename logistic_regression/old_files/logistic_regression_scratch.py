@@ -80,6 +80,8 @@ x = np.linspace(-20, 20, 20)
 hyperplane_1 = (((-1)*(weights[0] / weights[1]) * x) - (weights[2]/weights[1]))
 hyperplane = (((-1)*(weight_0 / weight_1) * x) - (weight_2/weight_1))
 
+plt.suptitle("Logistic Regression")
+
 plt.plot(x, hyperplane, '-', color="blue")
 plt.plot(x, hyperplane_1, '-', color="green")
 
