@@ -1,14 +1,54 @@
 import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_blobs
 from sklearn.datasets import load_digits
 from sklearn.model_selection import train_test_split
 import faiss
+from annoy import AnnoyIndex
 
 
-# Found here: https://towardsdatascience.com/make-knn-300-times-faster-than-scikit-learns-in-20-lines-5e29d74e76bb
-# I mean... wow, this thing eats up the whole mnist dataset in like 15 seconds. 
-# I will be working out my own twist on this once I do some studying on the faiss library
+# About 15-20 seconds to work through
+# the whole original MNIST dataset.
+class AnnoyKNN:
+    def __init__(self, K = 3):
+        self.K = K
+
+    def fit(self, X_train, y_train):
+        self.X_train = X_train
+        self.y_train = y_train
+        self.m, self.n = np.shape(X_train)
+
+    def predict(self, X_test):
+        test_m, test_n = np.shape(X_test)
+
+        # Initializes Annoy index / matrix
+        matrix = AnnoyIndex(self.n, 'euclidean')
+
+        # Constructing Annoy matrix
+        for i in range(self.m):
+            matrix.add_item(i, self.X_train[i])
+
+        # Builds Annoy matrix
+        matrix.build(self.K)
+
+        # Building prediction matrix
+        predictions = np.zeros(test_m)
+
+
+        for i in range(test_m):
+            # Compiles k nearest neighbors for each number / data point
+            # in out testing data and returns their index
+            index = matrix.get_nns_by_vector(X_test[i], self.K)
+
+            # Given our indexes above, this is piece of code "votes"
+            # and returns the majority nearest neighbor
+            predictions[i] = np.argmax(np.bincount(self.y_train[index]))
+
+        return predictions
+
+
+# 100% copy and pasted from here:
+# https://towardsdatascience.com/make-knn-300-times-faster-than-scikit-learns-in-20-lines-5e29d74e76bb
+# This acticle introduced me to a whole field that works on calculating nearest neighbors which
+# is how I found the Annoy python library in which I did my optimized implimentation on
 class FaissKNeighbors:
     def __init__(self, k=5):
         self.index = None
@@ -28,6 +68,10 @@ class FaissKNeighbors:
         predictions = np.array([np.argmax(np.bincount(x)) for x in votes])
         return predictions
 
+
+# Accury and Speed not the best
+# But more intuitive than either
+# FaissKNeighbors or AnnoyKNN
 class KNN:
     def __init__(self, K):
         self.K = K
@@ -51,10 +95,10 @@ class KNN:
         predictions = np.zeros(m)
 
         for i in range(m):
+            print(m)
             distance = self._distance(self.X_test[i], self.X_train)
 
             index = np.argsort(distance, axis = 0, kind="heapsort")[: self.K]
-            print(index)
 
             predictions[i] = np.argmax(np.bincount(self.y_train[index]))
 
@@ -74,7 +118,7 @@ def main():
     test_data = np.array(test_data)
     test_labels = np.array(test_labels)
 
-    model = KNN(K = 3)
+    model = AnnoyKNN(K = 3)
     model.fit(train_data, train_labels)
     predict1 = model.predict(test_data)
 
