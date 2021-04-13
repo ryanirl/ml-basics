@@ -1,16 +1,18 @@
 # ML-BASICS
 
+### WORK IN PROGRESS
+
+Implimentation of some basic Machine Learning Models with Python. Topics including Support Vector Machines (SVM), Logistic Regression, K-Means Clustering, and more. Please contact me with any questions, bugs, or typos.
+
 <br />
 
-<img src="img/preview.png" width="800" height="400">
+<div><img src="/img/preview.png" width="800" height="400"></div>
 
 <br />
 
-**WORK IN PROGRESS**
+**Currently Working On:** mnist Classification with SVM
 
-*Currently Working On:* mnist Classification with SVM
-
-PROBLEMS: Hit a roadblock where I don't have the proper prerequisites in probability to understand bayesian "stuff" and so I have been spending some time taking MIT OCW's 18.600 to better prepare myself. This will slow down the progress in this repo.
+*PROBLEMS:* Hit a roadblock where I don't have the proper prerequisites in probability to understand bayesian "stuff" and so I have been spending some time taking MIT OCW's 18.600 to better prepare myself. This will slow down the progress in this repo.
  
 <br />
  
