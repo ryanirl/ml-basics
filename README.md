@@ -76,3 +76,33 @@ Implimentation of some basic Machine Learning Models with Python. Topics includi
 
 
 
+<br />
+
+---
+
+
+## MNIST Classification with KNN
+
+The MNIST dataset is a collection of handwritten digits than we can then use to train some classification model that can make predictions given new handwritten digits. this is a pretty intuitive example:
+
+<br />
+
+<img src="mnist_classification/img/mnist_classification_example.png" width="500" height="200">
+
+<br />
+
+Using the K-Nearest-Neighbor model with the Annoy library to optimize the computationally expensive L2 norm I was able to create a model that can train on the entire MNIST dataset in under 20 seconds on a Macbook Pro with an average 95% accuracy. Plotting its confusion matrix gives:
+
+<br />
+
+<img src="mnist_classification/img/mnist_confusion_matrix_knn.png" width="500" height="200">
+
+<br />
+
+Find more on this jupyter notebook: https://github.com/ryanirl/ml-basics/tree/main/mnist_classification/KNN_mnist.ipynb
+
+<br />
+
+
+
+
