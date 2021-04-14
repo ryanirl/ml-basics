@@ -20,20 +20,22 @@ Implimentation of some basic Machine Learning Models with Python. Topics includi
 
 ## Road Map:
 
+**BOLDS** are things I have begun.
+
 ### Supervised Learning
 1. Classification
-    - Logistic Regression & Multinomial Logistic Regression
-    - Support Vector Machines (SVM)
+    - **Logistic Regression** & Multinomial Logistic Regression
+    - **Support Vector Machines (SVM)**
     - Naive Bayes
-    - K-Nearest-Neighbors (KNN)
+    - **K-Nearest-Neighbors (KNN)**
     - Decision Trees & Random Forest
     
 2. Regression
-    - Linear Regression
-    - Polynomial Regression
+    - **Linear Regression**
+    - **Polynomial Regression**
     - Lasso Regression (L1)
     - Ridge Regression (L2)
-    - Partial Lease Squares (PLS)
+    - **Partial Lease Squares (PLS)**
     - Principle Component (PCR)
 
 3. Neural Networks
@@ -50,7 +52,7 @@ Implimentation of some basic Machine Learning Models with Python. Topics includi
 
 ### Unsupervised Learning
 1. Clustering
-    - K-Means
+    - **K-Means**
     - Mean Shift
     - Expectation Maximization (EM) with Gaussian Mixture Models (GMM)
 
@@ -60,11 +62,11 @@ Implimentation of some basic Machine Learning Models with Python. Topics includi
     
 ### Analysis of Model
 1. Classification
-    - Accuracy
+    - **Accuracy**
     - Precision
     - Recall
     - f1
-    - Confusion Matrix
+    - **Confusion Matrix**
     - Mean Average Precision
 
 2. Regression
@@ -87,7 +89,7 @@ The MNIST dataset is a collection of handwritten digits than we can then use to 
 
 <br />
 
-<img src="mnist_classification/img/mnist_classification_example.png" width="500" height="200">
+<img src="mnist_classification/img/mnist_classification_example.png" width="75%">
 
 <br />
 
@@ -95,11 +97,11 @@ Using the K-Nearest-Neighbor model with the Annoy library to optimize the comput
 
 <br />
 
-<img src="mnist_classification/img/mnist_confusion_matrix_knn.png" width="500" height="200">
+<img src="mnist_classification/img/mnist_confusion_matrix_knn.png" width="50%">
 
 <br />
 
-Find more on this jupyter notebook: https://github.com/ryanirl/ml-basics/tree/main/mnist_classification/KNN_mnist.ipynb
+Find the code and more detail in my jupyter notebook: https://github.com/ryanirl/ml-basics/tree/main/mnist_classification/KNN_mnist.ipynb
 
 <br />
 
