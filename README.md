@@ -6,7 +6,9 @@ Implimentation of some basic Machine Learning Models with Python. Topics includi
 
 <br />
 
-<div><img src="/img/preview.png" width="800" height="400"></div>
+<p align="center">
+ <img src="./img/new_preview.png" width="95%">
+</p>
 
 <br />
 
@@ -76,6 +78,13 @@ Implimentation of some basic Machine Learning Models with Python. Topics includi
 
 3. Bias and Variance of Models
 
+## Basic Projects
+1. mnist Classification 
+2. Car Price Classification 
+    - Data taken from my CraigslistScraper repo :)
+
+3. Cart-Pole Balancing System
+4. ??? NEED IDEAS ??? 
 
 
 <br />
@@ -89,7 +98,9 @@ The MNIST dataset is a collection of handwritten digits than we can then use to 
 
 <br />
 
-<img src="mnist_classification/img/mnist_classification_example.png" width="75%">
+<p align="center">
+ <img src="./mnist_classification/img/mnist_classification_example.png" width="75%">
+</p>
 
 <br />
 
@@ -97,7 +108,9 @@ Using the K-Nearest-Neighbor model with the Annoy library to optimize the comput
 
 <br />
 
-<img src="mnist_classification/img/mnist_confusion_matrix_knn.png" width="50%">
+<p align="center">
+ <img src="./mnist_classification/img/mnist_confusion_matrix_knn.png" width="50%">
+</p>
 
 <br />
 

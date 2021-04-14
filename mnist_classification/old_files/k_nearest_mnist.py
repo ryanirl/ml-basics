@@ -10,6 +10,9 @@ import fastdist as dist
 import matplotlib.pyplot as plt
 from mlxtend.plotting import plot_confusion_matrix
 from mlxtend.evaluate import confusion_matrix
+
+# CODE FOR MNIST_DRAWING TAKEN FROM: 
+# https://github.com/scrambledpie/Drawing-Mnist-and-Cifarizing-image-files/blob/master/DrawMyOwnNumbers.ipynb
 from mnist_drawing import DrawMyOwnNumbers as draw
 
 def plot_digit(X, y, idx):
