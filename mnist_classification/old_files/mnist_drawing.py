@@ -5,6 +5,8 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import numpy as np
 
+# CODE TAKEN FROM: https://github.com/scrambledpie/Drawing-Mnist-and-Cifarizing-image-files/blob/master/DrawMyOwnNumbers.ipynb
+
 # This function takes 2 arguments, 
 #   - an optional keras model,
 #   - Canvas Width allows user to set the pixel height and width of the drawing box
@@ -30,6 +32,7 @@ def DrawMyOwnNumbers(Kerasmodel=None,CanvasWidth=200):
         b1 = "up"
         xold = None
         yold = None
+
     def motion(event):
             if b1 == "down":
                 nonlocal xold, yold
@@ -53,8 +56,7 @@ def DrawMyOwnNumbers(Kerasmodel=None,CanvasWidth=200):
         nonlocal root
         root.destroy()
 
-
-        filename = "4my_drawing.bmp"
+        filename = "my_drawing.bmp"
         image1.save(filename)
         II=np.asarray(mpimg.imread(filename))
         II=np.apply_along_axis(np.min,2,II)
@@ -94,6 +96,10 @@ def DrawMyOwnNumbers(Kerasmodel=None,CanvasWidth=200):
             ax3.bar(np.arange(10),p,0.8,color='g')
 
 
-    Button(root, text='classify!', command=handle_click).pack()
+    Button(root, text='CLASSIFY', command=handle_click).pack()
     root.mainloop()
     return DrawnOutMatrix
+
+
+
+
