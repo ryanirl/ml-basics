@@ -1,7 +1,7 @@
-from SVM import SVM, gaussian
+#from SVM import SVM, gaussian
 from KNN import KNN as lame
 import numpy as np
-from sklearn.svm import SVC
+#from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_digits
 from KNN import AnnoyKNN as KNN
@@ -68,7 +68,7 @@ train_data, test_data, train_labels, test_labels = train_test_split(X, y, test_s
 #plot_digit(b, 0, 0)
 
 
-model = KNN(K = 11)
+model = KNN(K = 101)
 model.fit(train_data, train_labels)
 
 predict1 = model.predict(test_draw_data)
