@@ -12,7 +12,7 @@ Implimentation of some basic Machine Learning Models with Python. Topics includi
 
 <br />
 
-**Currently Working On:** mnist Classification with SVM
+**Currently Working On:** Basic Neural Networks 
 
 *PROBLEMS:* Hit a roadblock where I don't have the proper prerequisites in probability to understand bayesian "stuff" and so I have been spending some time taking MIT OCW's 18.600 to better prepare myself. This will slow down the progress in this repo.
  
