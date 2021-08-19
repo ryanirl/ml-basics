@@ -13,7 +13,7 @@ def OLS(X, y, d):
     w = np.array([[0]] * (d - 1))
     b = np.array([[0]])
 
-    for i in range(10000):
+    for i in range(100000):
         h = hypothesis(w, X, b)
 
         w = w - ( 0.01 * (2.0 * np.dot(h - y, X.T) / 200.0))
@@ -56,6 +56,7 @@ def main():
     n = 200
 
     X = (4) * np.random.rand(n)[np.newaxis] - 2 # gives values [-2, 2)
+
 
     # Cool trick Percy Liang used during one of his lectures for CS221. It 
     # generates fake Y values and if the program works then w and b will converge
