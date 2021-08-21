@@ -74,7 +74,13 @@ def main():
 
     y = X.dot(artificial_weights) + artificial_bias + (noise / 5.0)
 
-    model = LinearRegression()
+    X, y = make_regression(n_features = 1, n_targets = 1, n_informative = 1, noise = 10, random_state = 0)
+    y = y[:, np.newaxis]
+
+    print(y.shape)
+    print(X.shape)
+
+    model = LinearRegression("l1", reg_lambda = 0.001)
     model.fit(X, y)
 
     weight = model.weights[0]

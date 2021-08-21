@@ -10,8 +10,6 @@ Implimentation of some basic Machine Learning Models with Python. Topics includi
  <img src="./img/new_preview.png" width="95%">
 </p>
 
-<br />
-
 ---
 
 ## Road Map:
