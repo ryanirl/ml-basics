@@ -2,61 +2,66 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mlxtend.plotting import plot_linear_regression
 from sklearn.datasets import make_regression
+from collections import defaultdict
+
+# NEED TO DO:
+#  - polynomial
+#  - bayes
+
+# These values simply are the values and gradients of l1 and l2 reg
+regularization_value = defaultdict(lambda: "ERROR")
+regularization_grad = defaultdict(lambda: "ERROR")
+
+regularization_value["None"] = (lambda alpha, theta: 0)
+regularization_value["l1"] = (lambda alpha, theta: alpha * np.sum(np.abs(theta)))
+regularization_value["l2"] = (lambda alpha, theta: alpha * np.sum(theta ** 2))
+
+regularization_grad["None"] = (lambda alpha, theta: 0)
+regularization_grad["l1"] = (lambda alpha, theta: alpha * np.sum(np.sign(theta)))
+regularization_grad["l2"] = (lambda alpha, theta: alpha * 2 * np.sum(theta))
 
 
-def hypothesis(w, x, b):
-    return np.dot(w.T, x) + b
+class LinearRegression:
+    def __init__(self, regularization = "None", alpha = 0.01, reg_lambda = 0.001):
+        """
+        Potential Regularization terms are:
+            - l1 (Lasso Regression)
+            - l2 (Ridge Regression)
+            - None (Non-Regularized OLS Regression)
 
+        """
+        self.regularization = regularization
+        self.reg_lambda = reg_lambda
+        self.alpha = alpha
 
-# Ordinary Least Squares Regression
-def OLS(X, y, d):
-    w = np.array([[0]] * (d - 1))
-    b = np.array([[0]])
+    def predict(self, w, X, b):
+        return X.dot(w) + b
 
-    for i in range(100000):
-        h = hypothesis(w, X, b)
+    def loss(self, pred, actual):
+        MSE = np.sum(actual - pred) ** 2 
+        reg = regularization_value[self.regularization](self.reg_lambda, self.weights)
 
-        w = w - ( 0.01 * (2.0 * np.dot(h - y, X.T) / 200.0))
-        b = b - ( 0.01 * (2.0 * np.sum(h - y)) / 200.0 )
-        # print("w: {}, b: {}".format(w, b))
-        
-    return w, b
+        return (1.0 / self.m) * MSE + reg
 
+    def fit(self, X, y):
+        self.m, self.n = X.shape
 
-def L1_cost():
-    pass
+        self.weights = np.random.uniform(-1, 1, (self.n, 1))
+        self.bias = np.random.uniform(-1, 1, (1, 1))
 
-def lassoL1():
-    pass
+        for i in range(1000):
+            reg_grad = regularization_grad[self.regularization](self.reg_lambda, self.weights)
+            pred = self.predict(self.weights, X, self.bias)
 
-def ridgeL2():
-    pass
+            if i % 100 == 0: print("Loss at epoch {} is: {}".format(i, self.loss(pred, y)))
 
-def polynomial():
-    pass
-
-def bayes_lin():
-    pass
-    
-
-
-class Regression:
-    def __init__(self, kind = OLS):
-        self.kind = kind
-
-    def fit(X, y):
-        pass
-
-    def predict(X):
-        pass
+            self.weights = self.weights - (self.alpha * 2 * (1.0 / self.m) * X.T.dot(pred - y)) + reg_grad
+            self.bias = self.bias - (self.alpha * 2 * (1.0 / self.m) * np.sum(pred - y)) 
 
     
 
 def main():
-    n = 200
-
-    X = (4) * np.random.rand(n)[np.newaxis] - 2 # gives values [-2, 2)
-
+    n = 100
 
     # Cool trick Percy Liang used during one of his lectures for CS221. It 
     # generates fake Y values and if the program works then w and b will converge
@@ -64,23 +69,34 @@ def main():
     artificial_weights = np.array([[-1]])
     artificial_bias = np.array([[3]])
 
-    noise = np.random.rand(n)
-    Y = np.dot(artificial_weights.T, X) + artificial_bias + (noise / 5.0)
+    X = np.random.uniform(-2, 2, (n, 1))
+    noise = np.random.uniform(-1, 1, (n, 1))
 
-    w, b = OLS(X, Y, 2)
-    print(w)
-    print(b)
+    y = X.dot(artificial_weights) + artificial_bias + (noise / 5.0)
 
-    plt.scatter(X, Y, color="blue")
+    model = LinearRegression()
+    model.fit(X, y)
+
+    weight = model.weights[0]
+    bias = model.bias[0]
+    print("weight0: {} | bias: {}".format(weight, bias))
+
+    plt.scatter(X, y, color = "blue")
+
     x = np.linspace(-2, 2, 2)
-    hyperplane = w[0] * x + b[0]
 
-    plt.plot(x, hyperplane, '-', color="red")
+    hyperplane = weight * x + bias
+
+    plt.plot(x, hyperplane, '-', color = "red")
 
     plt.show()
 
 
-
-
 if __name__ == "__main__":
     main()
+
+
+
+
+
+

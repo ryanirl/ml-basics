@@ -3,15 +3,9 @@ from sklearn.datasets import make_blobs
 import matplotlib.pyplot as plt
 
 
-### --- Hyperparameters --- ###
-
-n = 100 
-eta = 0.01
-epochs = 5000
-
-
 ### --- Gather Dataset --- ###
 
+n = 100
 X, y = make_blobs(n_samples = n, centers = 2)
 
 y = y[:, np.newaxis]
@@ -31,6 +25,9 @@ class LogisticRegression:
         return -np.sum(BCE) * (1.0 / self.m)
 
     def fit(self, X, y):
+        eta = 0.01
+        epochs = 5000
+
         self.m, self.n = X.shape
 
         self.weights = np.random.uniform(-1, 1, (self.n, 1))
