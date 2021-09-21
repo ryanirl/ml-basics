@@ -2,7 +2,9 @@
 
 ### WORK IN PROGRESS
 
-Implimentation of some basic Machine Learning Models with Python. Topics including Support Vector Machines (SVM), Logistic Regression, K-Means Clustering, and more. Please contact me with any questions, bugs, or typos.
+My implimentation of Machine Learning Models from Scratch with Python. Models
+include Support Vector Machines (SVM), Logistic Regression, K-Means Clustering,
+KNN, and more. Please contact me with any questions, bugs, or typos.
 
 <br />
 
@@ -33,6 +35,7 @@ Implimentation of some basic Machine Learning Models with Python. Topics includi
     - Principle Component (PCR)
 
 3. Neural Networks
+    - **MLP's**
     - **CNN**
     - RNN
     - Transformer Networks
@@ -78,9 +81,9 @@ Implimentation of some basic Machine Learning Models with Python. Topics includi
 
 ## MNIST Classification with KNN
 
-The MNIST dataset is a collection of handwritten digits than we can then use to
-train some classification model that can make predictions given new handwritten
-digits. This is a pretty intuitive example:
+The MNIST dataset is a collection of handwritten digits that we can use to
+train a handwritten digit classification model on. To give an intuitive 
+example: 
 
 <br />
 
@@ -90,11 +93,9 @@ digits. This is a pretty intuitive example:
 
 <br />
 
-Using the K-Nearest-Neighbor model with the Annoy library to optimize via
-approximations and avoid calculating the computationally expensive L2 norm for
-all 60,000 datapoints in the mnist dataset I was able to create a model that
-can train on the entire MNIST dataset in under 20 seconds on a Macbook Pro with
-an average 95% accuracy. Plotting its confusion matrix gives:
+Using a KNN model with optimizations via approximations to avoid calculating the 
+computationally expensive L2 norm for every 60,000th digit in the dataset I was able
+acheive an average of 95% accuracy. The confusion matrix for this model is:
 
 <br />
 
@@ -104,7 +105,8 @@ an average 95% accuracy. Plotting its confusion matrix gives:
 
 <br />
 
-Find the code and more detail in my jupyter notebook: https://github.com/ryanirl/ml-basics/tree/main/mnist_classification/KNN_mnist.ipynb
+Find the code and more detail in my jupyter notebook: 
+https://github.com/ryanirl/ml-basics/tree/main/mnist_classification/KNN_mnist.ipynb
 
 <br />
 
