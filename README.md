@@ -88,7 +88,7 @@ example:
 <br />
 
 <p align="center">
- <img src="./mnist_classification/img/mnist_classification_example.png" width="75%">
+ <img src="./img/mnist_classification_example.png" width="75%">
 </p>
 
 <br />
@@ -100,7 +100,7 @@ acheive an average of 95% accuracy. The confusion matrix for this model is:
 <br />
 
 <p align="center">
- <img src="./mnist_classification/img/mnist_confusion_matrix_knn.png" width="50%">
+ <img src="./img/mnist_confusion_matrix_knn.png" width="50%">
 </p>
 
 <br />
