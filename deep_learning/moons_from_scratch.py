@@ -1,19 +1,21 @@
 import numpy as np
 from sklearn.datasets import make_moons
 import matplotlib.pyplot as plt
+import time
 
 # Was racing myself and finished this with no pre-planning, 100% from scratch,
 # and not a single google in roughly 1 hour and 40 minutes. 
 
 
 # Goal:
-#Linear(2, 16),
-#ReLU(),
-#Linear(16, 16),
-#ReLU(),
-#Linear(16, 1)
-#
-#SigmoidBinaryCE()
+# -----------------
+# Linear(2, 16),
+# ReLU(),
+# Linear(16, 16),
+# ReLU(),
+# Linear(16, 1)
+# SigmoidBinaryCE()
+# -----------------
 
 
 
@@ -21,14 +23,16 @@ class ReLU:
     def __call__(self, x):
         self.x = x
         self.out = np.maximum(x, 0)
+
         return self.out
 
     def backward(self, ingrad):
         return ingrad * (self.x > 0)
 
+
 class SigmoidBCE: 
     """
-    DO NOT SIGMOID BEFORE HAND THIS IS A BYPASS
+    DO NOT SIGMOID BEFORE HAND THIS IS A BYPASS.
 
     """
     def __call__(self, pred, actual):
@@ -64,7 +68,7 @@ class MoonClassification:
         self.b2 = np.random.uniform(-1, 1, (1, 1))
 
         # Start Forward
-        for i in range(50000):
+        for i in range(500):
             self.l0 = X.dot(self.w0) + self.b0.T
             self.l0_act = ReLU()
             self.l0_out = self.l0_act(self.l0)
@@ -77,7 +81,8 @@ class MoonClassification:
 
             self.loss = SigmoidBCE()
             self.out = self.loss(self.l2, y)
-#            if i % 50 == 0: print(self.out)
+
+            if i % 50 == 0: print(self.out)
 
             self.backward()
 
@@ -90,8 +95,6 @@ class MoonClassification:
             self.w2 = self.w2 - 0.01 * self.w2_grad
             self.b2 = self.b2 - 0.01 * self.b2_grad
 
-            # SOME BACKWARDS CALL
-            # SOME PARAM UPDATE
 
     def predict(self, X):
         self.l0 = X.dot(self.w0) + self.b0.T
@@ -129,29 +132,19 @@ class MoonClassification:
 
 
 
-
-
-
 n = 100
 
 X, y = make_moons(n_samples = n)
 y = y[:, np.newaxis]
-print(y.shape)
 
 model = MoonClassification()
 
-import time
-
 start = time.time()
 model.fit(X, y)
-
 print(time.time() - start)
 
 
-
-
-
-# VISUALIZE
+### --- Visualize --- ### 
 
 h = 0.01 
 

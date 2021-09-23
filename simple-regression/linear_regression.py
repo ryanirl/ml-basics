@@ -1,14 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from mlxtend.plotting import plot_linear_regression
-from sklearn.datasets import make_regression
 from collections import defaultdict
 
-# NEED TO DO:
-#  - polynomial
-#  - bayes
 
-# These values simply are the values and gradients of l1 and l2 reg
+# Neat trick I use to allow user string imput without adding multiple
+# if else statements. These values simply allow someone to say if they
+# want to use l1, l2, or no regularization.
 regularization_value = defaultdict(lambda: "ERROR")
 regularization_grad = defaultdict(lambda: "ERROR")
 
@@ -81,14 +78,12 @@ def main():
 
     weight = model.weights[0]
     bias = model.bias[0]
+
     print("weight0: {} | bias: {}".format(weight, bias))
 
     plt.scatter(X, y, color = "blue")
-
     x = np.linspace(-2, 2, 2)
-
     hyperplane = weight * x + bias
-
     plt.plot(x, hyperplane, '-', color = "red")
 
     plt.show()

@@ -6,7 +6,7 @@ My implimentation of Machine Learning Models from Scratch with Python. Models
 include Support Vector Machines (SVM), Logistic Regression, K-Means Clustering,
 KNN, and more. Please contact me with any questions, bugs, or typos.
 
-<br />
+
 
 <p align="center">
  <img src="./img/new_preview.png" width="95%">
@@ -111,5 +111,10 @@ https://github.com/ryanirl/ml-basics/tree/main/mnist_classification/KNN_mnist.ip
 <br />
 
 
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
 
 
