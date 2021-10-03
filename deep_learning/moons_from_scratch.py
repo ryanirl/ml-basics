@@ -68,7 +68,7 @@ class MoonClassification:
         self.b2 = np.random.uniform(-1, 1, (1, 1))
 
         # Start Forward
-        for i in range(500):
+        for i in range(50000):
             self.l0 = X.dot(self.w0) + self.b0.T
             self.l0_act = ReLU()
             self.l0_out = self.l0_act(self.l0)
@@ -82,7 +82,7 @@ class MoonClassification:
             self.loss = SigmoidBCE()
             self.out = self.loss(self.l2, y)
 
-            if i % 50 == 0: print(self.out)
+#            if i % 50 == 0: print(self.out)
 
             self.backward()
 
@@ -94,6 +94,8 @@ class MoonClassification:
 
             self.w2 = self.w2 - 0.01 * self.w2_grad
             self.b2 = self.b2 - 0.01 * self.b2_grad
+
+        print(time.time() - start)
 
 
     def predict(self, X):

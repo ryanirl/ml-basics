@@ -1,6 +1,7 @@
 # ML-BASICS
 
-### WORK IN PROGRESS
+**WORK IN PROGRESS: Currently in the progress of reorganizing the files so this
+repo is an absolute mess right now.**
 
 My implimentation of Machine Learning Models from Scratch with Python. Models
 include Support Vector Machines (SVM), Logistic Regression, K-Means Clustering,

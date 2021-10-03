@@ -3,7 +3,10 @@
 ---
 
 ## Clustering Models TODO:
-    - K Means
+    - K Means (make more intuitive and structure better)
+         - Make more intuitive
+         - Stucture class better
+         - Fix local minima problem w/ KMeans++
     - Means Shift
     - DBSCAN
     - Gaussian Mixture Model (GMM)
@@ -25,7 +28,7 @@ more and more often.
 <br />
 
 <p align="center">
- <img src="./img/local_minima_example.png" width="75%">
+ <img src="./img/local_minima_example.png" width="90%">
 </p>
 
 <br />
