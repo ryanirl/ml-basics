@@ -10,7 +10,6 @@ include Support Vector Machines (SVM), Logistic Regression, K-Means Clustering,
 KNN, and more. Please contact me with any questions, bugs, or typos.
 
 
-
 <p align="center">
  <img src="./img/new_preview.png" width="95%">
 </p>
@@ -109,10 +108,10 @@ acheive an average of 95% accuracy. The confusion matrix for this model is:
 <br />
 
 Find the code and more detail in my jupyter notebook: 
-https://github.com/ryanirl/ml-basics/tree/main/mnist_classification/KNN_mnist.ipynb
+https://github.com/ryanirl/ml-basics/blob/main/examples/knn_mnist_classification/KNN_mnist.ipynb
+
 
 <br />
-
 
 
 <!-- LICENSE -->
