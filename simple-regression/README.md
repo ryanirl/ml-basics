@@ -1,14 +1,5 @@
 # Regression
 
----
-
-
-<p align="center">
- <img src="./img/mygif0.gif" width="50%">
-</p>
-
-
-
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 1. Linear Regression (w/ Regularization)
@@ -16,8 +7,6 @@
 
 
 <br />
-
----
 
 
 <!-- LINEAR REGRESSION -->
@@ -37,18 +26,12 @@ Loss at epoch 700 is: 5.323000905749096e-10
 Loss at epoch 800 is: 1.010975022628867e-11
 Loss at epoch 900 is: 1.9197122625422572e-13
 weight0: [-0.99826152] | bias: [2.98648996]
-
 ```
-    
-    
+
 <p align="center">
  <img src="./img/linear_regression_example_0.png" width="80%">
 </p>
 
-
-<br />
-
----
 
 <!-- POLYNOMIAL REGRESSION -->
 ## polynomial_regression.py
@@ -60,7 +43,6 @@ Running the script `$python3 polynomial_regression.py` gives:
 [[0.90242544]
  [0.62056687]
  [0.30220896]] [[0.48734994]]
-
 ```
 
 
@@ -69,13 +51,9 @@ Running the script `$python3 polynomial_regression.py` gives:
 </p>
 
 
-<br />
-
----
-
 
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See `LICENSE` for more information 
 

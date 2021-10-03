@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import make_blobs
 
 
-# There is a bug in this program somewhere, I need to find it. Maybe it is with the plot3d
-# or something more serious with the actual training. 
 class KMeans:
     def __init__(self, k_clusters = 2):
         self.k_clusters = k_clusters

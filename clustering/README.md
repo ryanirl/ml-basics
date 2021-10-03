@@ -2,15 +2,15 @@
 
 ---
 
-## Clustering Models TODO:
-    - K Means (make more intuitive and structure better)
-         - Make more intuitive
-         - Stucture class better
-         - Fix local minima problem w/ KMeans++
-    - Means Shift
-    - DBSCAN
-    - Gaussian Mixture Model (GMM)
-    - Affinity Propogation
+## TODO:
+- K Means (make more intuitive and structure better)
+     - Make more intuitive
+     - Stucture class better
+     - Fix local minima problem w/ KMeans++
+- Means Shift
+- DBSCAN
+- Gaussian Mixture Model (GMM)
+- Affinity Propogation
 
 
 ---
@@ -25,47 +25,40 @@ algorithm. For 2D data with 2 clusters it seems to work everytime, though when
 increasing the dimensions and clusters it seems to get stuck in local minima 
 more and more often. 
 
-<br />
-
 <p align="center">
  <img src="./img/local_minima_example.png" width="90%">
 </p>
 
+
 <br />
 
----
-
+<!-- MEANS SHIFT -->
 ## Means Shift
 
 
 <br />
 
 
----
-
+<!-- DBSCAN -->
 ## DBSCAN
 
 
 <br />
 
 
----
-
+<!-- GAUSSIAN MIXTURE MODEL -->
 ## Gaussian Mixture Model (GMM)
 
 
 <br />
 
 
----
-
+<!-- AFFINITY PROPOGATION -->
 ## Affinity Propogation
 
 
 <br />
 
-
----
 
 
 <!-- LICENSE -->

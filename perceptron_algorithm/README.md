@@ -1,14 +1,7 @@
 # The Perceptron
 
----
-
-TODO:
- - GARENTEED CONVERGENCE
- - ADD HISTORY
-
 
 You can find the guide here: https://github.com/ryanirl/ml-basics/blob/main/perceptron_algorithm/perceptron_algorithm_guide.ipynb
-
 
 <!-- GUIDE TABLE OF CONTENTS -->
 ## Guide Table of Contents
@@ -21,8 +14,6 @@ You can find the guide here: https://github.com/ryanirl/ml-basics/blob/main/perc
 5. Final Notes
 
 <br />
-
----
 
 
 <!-- PERCEPTRON -->
@@ -43,7 +34,5 @@ Running the script `$python3 logistic_regression.py` gives:
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-
 
 
