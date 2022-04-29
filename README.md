@@ -21,60 +21,61 @@ KNN, and more. Please contact me with any questions, bugs, or typos.
 **BOLDS** are things I have begun or finished.
 
 ### Supervised Learning
-1. Classification
+1. Classification:
     - **Logistic Regression** & Multinomial Logistic Regression
     - **Support Vector Machines (SVM)**
     - Naive Bayes
     - **K-Nearest-Neighbors (KNN)**
-    - Decision Trees & Random Forest
     
-2. Regression
+2. Regression:
     - **Linear Regression**
     - **Polynomial Regression**
     - **Lasso Regression (L1)**
     - **Ridge Regression (L2)**
     - **Partial Least Squares (PLS)**
-    - Principle Component (PCR)
+    - Principle Component Regression (PCR)
 
-3. Neural Networks
-    - **MLP's**
-    - **CNN**
-    - RNN
-    - Transformer Networks
-    - Generative Adversarial Nets (GAN)
-
-4. Boosting
+3. Ensemble & Tree Based Methods:
+    - Random Forest
     - XGBoost
-    - AdaBoost
-    - Gradient Tree Boosting
-    
+    - Adaboost
+    - Boosting
+    - Bagging
+
+4. Deep Learning:
+    - **Multilayer Perceptron (MLP)**
+    - **Convolutional Neural Networks (CNNs)**
+    - Recurrent Neural Networks (RNNs)
+    - Generative Adversarial Nets (GANs)
+    - Transformers and Attention Based Methods.
+
 
 ### Unsupervised Learning
 1. Clustering
     - **K-Means**
     - Mean Shift
+    - DBSCAN
+    - Spectral Clustering
+    - Hierarchical Clustering 
     - Expectation Maximization (EM) with Gaussian Mixture Models (GMM)
 
 2. Dimensionality Reduction
     - Principle Component Analysis (PCA)
+    - t-SNE
+    - UMAP
     
-    
-### Analysis of Model
-1. Classification
-    - **Accuracy**
+
+### Analysis:
+1. Metrics
+    - Accuracy
     - Precision
     - Recall
     - f1
-    - **Confusion Matrix**
-    - Mean Average Precision
-
-2. Regression
-    - **Mean Squared Error (MSE)**
+    - R^2
+    - Mean Squared Error (MSE)
     - Mean Absolute Error (MAE)
-    - R squared
-
-3. Bias and Variance of Models
-
+    - Mean Average Precision (MAP)
+    - Mean Average Precision Intersection over Union (MAP IoU)
 
 <br />
 

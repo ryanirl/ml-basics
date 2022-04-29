@@ -141,10 +141,15 @@ y = y[:, np.newaxis]
 
 model = MoonClassification()
 
-start = time.time()
-model.fit(X, y)
-print(time.time() - start)
+import cProfile
 
+with cProfile.Profile() as pr:
+    start = time.time()
+    model.fit(X, y)
+    print(time.time() - start)
+
+
+pr.print_stats()
 
 ### --- Visualize --- ### 
 
